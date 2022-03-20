@@ -23,7 +23,7 @@ module.exports = {
         let rand = db.functions.randomCode()
 
         /* Create the Discord Channel */
-        let channel = await interaction.guild.channels.create(`ticket-${rand}`, {
+        let channel = interaction.guild.channels.create(`ticket-${rand}`, {
             type: "GUILD_TEXT",
             parent: config.categoryID,
             topic: "Status: Open",
