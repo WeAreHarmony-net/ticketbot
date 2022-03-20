@@ -2,6 +2,7 @@
 - Closing tickets may not work the first time. Fix: Redo the command.
 
 # How to get this bot setup.
+Please follow the guide below starting from top to bottom.
 
 # NodeJS
 If you have no experience with bots and want to run the bot yourself, you will need to download this software: https://nodejs.org and please download the one that is recommended for most users.
