@@ -22,3 +22,16 @@ MONGO_DB_STRING=mongodb+srv://test123:yourpassword@cluster0.rvtdf.mongodb.net/my
 ```
 
 # Creating a Discord Bot
+- To create the bot, go to https://discord.com/developers and click "New Application".
+- Name the application and when you get redirected to the application page, click the section "Bot" on the left. When you are on there, click "Add Bot".
+- Click "Reset Token" and then the "Copy" button.
+- Go onto your `.env` file and where it says `TOKEN=` put the copied token after it.
+- Your `.env` should look like this:
+```
+TOKEN=OTU1MDU2MDU1MDE1MDU5NDg2.YjcHQw.HxibWDxU1Hc9TIwJpGWqnhCMmoE
+MONGO_DB_STRING=mongodb+srv://test123:yourpassword@cluster0.rvtdf.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+```
+
+# Running the bot
+All you need to do is open the file `run.bat` and it should open a terminal. You should see: `DB | Connected` and `DISCORD | BotName#1111`
+If not, you need to look back on the steps and make sure you did everything.
