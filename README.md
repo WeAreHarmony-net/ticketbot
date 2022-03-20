@@ -33,5 +33,6 @@ MONGO_DB_STRING=mongodb+srv://test123:yourpassword@cluster0.rvtdf.mongodb.net/my
 ```
 
 # Running the bot
+**If it is your first time running the bot, please run `install.bat` first before running `run.bat`!**
 All you need to do is open the file `run.bat` and it should open a terminal. You should see: `DB | Connected` and `DISCORD | BotName#1111`
 If not, you need to look back on the steps and make sure you did everything.
