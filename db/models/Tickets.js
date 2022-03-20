@@ -2,6 +2,7 @@ const mongoose = require('mongoose')
 
 const t = mongoose.Schema({
     userID: String,
+    channelID: String,
     ticketID: String,
     status: String
 })

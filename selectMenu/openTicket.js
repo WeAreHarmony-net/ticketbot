@@ -54,7 +54,8 @@ module.exports = {
         let tdb = await new db.models.Tickets({
             userID: interaction.user.id,
             ticketID: rand,
-            status: "Open"
+            status: "Open",
+            channelID: channel.id
         }).save()
 
         /* Update config openTickets */
