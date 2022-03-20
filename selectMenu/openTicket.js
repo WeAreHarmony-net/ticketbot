@@ -48,26 +48,28 @@ module.exports = {
         }).catch(err => {
             /* Check if there was an error creating the channel */
             if (err) return interaction.update({ content: "Sorry, there was an issue while creating the channel. This may be because the ticket handler role is higher than the bot.", embeds: [], components: [], ephemeral: true })
+        }).then(async (channel) => {
+
+            /* Create a new ticket in the db */
+            let tdb = await new db.models.Tickets({
+                userID: interaction.user.id,
+                ticketID: rand,
+                status: "Open",
+                channelID: channel.id
+            }).save()
+
+            /* Update config openTickets */
+            await config.updateOne(
+                { $push: { openTickets: rand } }
+            )
+
+            /* Update message to success */
+            await interaction.update({ content: `Created the ticket. <#${channel.id}>`, embeds: [], components: [], ephemeral: true })
+
+            /* Send message to channel */
+            channel.send({ content: `Welcome, <@${interaction.user.id}>.\nThe <@&${config.roleID}> team will be with you shortly.` })
+
         })
-
-        /* Create a new ticket in the db */
-        let tdb = await new db.models.Tickets({
-            userID: interaction.user.id,
-            ticketID: rand,
-            status: "Open",
-            channelID: channel.id
-        }).save()
-
-        /* Update config openTickets */
-        await config.updateOne(
-            { $push: { openTickets: rand } }
-        )
-
-        /* Update message to success */
-        await interaction.update({ content: `Created the ticket. <#${channel.id}>`, embeds: [], components: [], ephemeral: true })
-
-        /* Send message to channel */
-        channel.send({ content: `Welcome, <@${interaction.user.id}>.\nThe <@&${config.roleID}> team will be with you shortly.` })
 
     }
 }
