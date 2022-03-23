@@ -40,8 +40,8 @@ module.exports = {
 
         /* Edit the channel */
         let c = await interaction.guild.channels.cache.get(ticket.channelID)
-        c.permissionOverwrites.edit(u, { VIEW_CHANNEL: false })
-        c.edit({ name: `closed-${ticket.ticketID}`, topic: `Status: Closed` })
+        c.permissionOverwrites.delete(u).catch(console.error)
+        c.edit({ name: `closed-${ticket.ticketID}`, topic: `Status: Closed` }).catch(console.error)
         
         /* Update the status in the db */
         await ticket.updateOne({
