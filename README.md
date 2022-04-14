@@ -44,7 +44,7 @@ MONGO_DB_STRING=mongodb+srv://test123:yourpassword@cluster0.rvtdf.mongodb.net/my
 All you need to do is open the file `run.bat` and it should open a terminal. You should see: `DB | Connected` and `DISCORD | BotName#1111`
 If not, you need to look back on the steps and make sure you did everything.
 
-#Copyright
+# Copyright
 Copyright (C) 2022 WeAreHarmony.net
 
 This program is free software: you can redistribute it and/or modify
